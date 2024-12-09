@@ -3,7 +3,7 @@
 This project describes how to segment images and detect people using PyTorch. It employs the DeepLabV3 model to segment people in images and visualize the results.
 
 ## Table of Contents
-1. Project Overview
+1. Project Overview(#Project-Overview)
 2. Installation
 3. Usage
 4. Example Results
