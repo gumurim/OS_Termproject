@@ -25,11 +25,11 @@ To run this project, you need the following libraries:
 - Matplotlib
 You can install the required libraries using the following command:
 
-bash
-pip install torch torchvision opencv-python matplotlib
+'''bash
+'''pip install torch torchvision opencv-python matplotlib
 
 ## Usage
-image_path = "path/to/your/image.jpg"  # Specify the local image path here.
+''' image_path = "path/to/your/image.jpg"  # Specify the local image path here.
 
 ## Example Results
 
