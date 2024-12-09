@@ -27,6 +27,13 @@ input_tensor = input_tensor.to(device)
 with torch.no_grad():
     output = model(input_tensor)['out'][0]
 output_predictions = output.argmax(0)
+# 마스킹
+person_class = 15
+mask = output_predictions == person_class
+
+# 이미지를 배열로 변환하고 마스크 적용
+image_np = np.array(image)
+image_np[mask.cpu().numpy()] = [255, 0, 0]
 
 # 결과 시각화 수정
 plt.figure(figsize=(10, 5))
