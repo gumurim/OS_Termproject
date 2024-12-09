@@ -44,6 +44,8 @@ To set up the environment and install the required dependencies, run the followi
 bash
 pip install torch torchvision opencv-python matplotlib
 
+---
+
 ## Usage
 1. Clone the repository and navigate to the project directory:
 git clone https://github.com/zip-sa/Image-segmentation_DeepLabV3.git
@@ -57,3 +59,16 @@ python segment.py
 
 4. View the results:
 The original image and the segmented output will be displayed side by side.
+
+---
+
+## Example Results
+
+Input Image
+
+Segmented Image
+
+---
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
