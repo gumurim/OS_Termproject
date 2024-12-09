@@ -2,6 +2,8 @@ import torch
 import torchvision.transforms as T
 from PIL import Image
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 # 이미지 경로 설정 및 로드
 image_path = "capture.JPG"
@@ -18,7 +20,7 @@ preprocess = T.Compose([
 ])
 input_tensor = preprocess(image).unsqueeze(0)
 
-# GPU 설정 추가
+# GPU 설정 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
 input_tensor = input_tensor.to(device)
@@ -27,15 +29,15 @@ input_tensor = input_tensor.to(device)
 with torch.no_grad():
     output = model(input_tensor)['out'][0]
 output_predictions = output.argmax(0)
+
 # 마스킹
 person_class = 15
 mask = output_predictions == person_class
-
-# 이미지를 배열로 변환하고 마스크 적용
 image_np = np.array(image)
 image_np[mask.cpu().numpy()] = [255, 0, 0]
 
-# 결과 시각화 수정
+
+# 결과 시각화 
 plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
 plt.title("Original Image")
@@ -43,8 +45,8 @@ plt.imshow(image)
 plt.axis('off')
 
 plt.subplot(1, 2, 2)
-plt.title("Prediction")
-plt.imshow(output_predictions.cpu().numpy())
+plt.title("Segmented Image")
+plt.imshow(image_np)
 plt.axis('off')
 
 plt.show()
