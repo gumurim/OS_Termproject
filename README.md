@@ -41,5 +41,19 @@ In this project, we leverage the power of DeepLabV3 with a ResNet-101 backbone t
 
 To set up the environment and install the required dependencies, run the following command:
 
-```bash
+bash
 pip install torch torchvision opencv-python matplotlib
+
+## Usage
+1. Clone the repository and navigate to the project directory:
+git clone https://github.com/zip-sa/Image-segmentation_DeepLabV3.git
+cd Image-segmentation_DeepLabV3
+
+2. Replace the image_path in the script with the path to your desired image:
+image_path = "path/to/your/image.jpg"  # Specify the path to your local image.
+
+3. Run the script:
+python segment.py
+
+4. View the results:
+The original image and the segmented output will be displayed side by side.
