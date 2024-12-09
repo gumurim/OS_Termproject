@@ -29,7 +29,7 @@ You can install the required libraries using the following command:
 pip install torch torchvision opencv-python matplotlib
 ```
 ## Usage
-image_path = "path/to/your/image.jpg"  # Specify the local image path here.
+```image_path = "path/to/your/image.jpg"  # Specify the local image path here.```
 
 ## Example Results
 
